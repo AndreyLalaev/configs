@@ -1,44 +1,16 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 Plugin 'tomasiser/vim-code-dark'
 
@@ -51,37 +23,42 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 
-" Markdown
-" Plugin 'vim-pandoc/vim-pandoc'
-" Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'iamcco/markdown-preview.nvim'
+Plugin 'ycm-core/YouCompleteMe'
 
-filetype plugin indent on
+" FOR FUNCTION HIGHLIGHT https://vimawesome.com/plugin/vim-cpp-enhanced-highlight
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vhda/verilog_systemverilog.vim'
+
+Plugin 'godlygeek/tabular'
+" RustLang
+Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
+Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 syntax on
 set scrolloff=1
-"set termguicolors
 colorscheme codedark
-"highlight Normal ctermbg=None
 
 set enc=utf-8
 set ls=2
 set mouse=a
 set splitbelow
 set number
-set nofoldenable    " disable folding
+" disable folding
+set nofoldenable
+
 " Tab settings
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 set colorcolumn=80
-
+set clipboard+=unnamedplus
 " Short keys
 nmap <F8> :TagbarToggle<CR>
-nmap <F3> :bprev<CR>
-nmap <F4> :bnext<CR>
 map <F5> i -- Andrey Lalaev <a.lalaev@metrotek.ru> <esc>:r !date -R <CR>i<Backspace> <esc>
+
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 set omnifunc=syntaxcomplete#Complete
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -132,10 +109,12 @@ augroup project
     autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 augroup END
 
+autocmd BufRead,BufNewFile *.vt set filetype=verilog
 "auto close {
 function! s:CloseBracket()
     let line = getline('.')
     if line =~# '^\s*\(struct\|class\|enum\) '
+        "return "{\<Enter>}\<Esc>O"
         return "{\<Enter>};\<Esc>O"
     elseif searchpair('(', '', ')', 'bmn', '', line('.'))
         " Probably inside a function call. Close it off.
@@ -147,7 +126,20 @@ endfunction
 inoremap <expr> {<Enter> <SID>CloseBracket()
 
 setlocal formatprg=hindent
+let g:vim_markdown_folding_disabled = 1
 
-set t_Co=256
+let g:ycm_clangd_uses_ycmd_caching = 0
+let g:ycm_clangd_binary_path = exepath("clangd")
+let g:ycm_show_diagnostics_ui = 0
 
-let g:mkdp_browser = 'safari'
+" autoformatter for c++
+function FormatBuffer()
+  "if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
+   if &modified
+    let cursor_pos = getpos('.')
+    :%!clang-format --style=WebKit
+    call setpos('.', cursor_pos)
+  endif
+endfunction
+
+autocmd BufWritePre *.h,*.hpp,*.c,*.cpp :call FormatBuffer()

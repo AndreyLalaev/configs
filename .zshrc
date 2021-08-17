@@ -70,6 +70,7 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -99,10 +100,15 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 alias jobtime="ssh 192.168.222.178"
+alias vsim="/home/mrgreenstar/altera/20.1/modelsim_ase/bin/vsim"
 
 # Tell grep to highlight matches
 alias grep="grep --color=auto"
 alias ip="ip -c"
+alias cal="ncal -b"
+alias neofetch="neofetch --disable gpu theme icons"
+alias bat="batcat --pager=never"
+alias arm-elf-gcc="arm-none-eabi-gcc"
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 
@@ -111,15 +117,23 @@ DEBEMAIL="a.lalaev@metrotek.ru"
 DEBMAIL=$DEBEMAIL
 DEBFULLNAME="Andrey Lalaev"
 export DEBEMAIL DEBMAIL DEBFULLNAME
+# Quartus 20 Lite
+#export ALTERAPATH=$HOME/altera/20.1.1/
+#export QUARTUS_ROOTDIR=${ALTERAPATH}/quartus
+#export QUARTUS_ROOTDIR_OVERRIDE="$QUARTUS_ROOTDIR"
 
-export ALTERAPATH="/opt/quartus/altera/13.0/"
-#export ALTERAOCLSDKROOT="${ALTERAPATH}/hld"
-export QUARTUS_ROOTDIR=${ALTERAPATH}/quartus
-export QUARTUS_ROOTDIR_OVERRIDE="$QUARTUS_ROOTDIR"
-export PATH=$PATH:${ALTERAPATH}/quartus/bin
-export PATH=$PATH:${ALTERAPATH}/nios2eds/bin
-export PATH=$PATH:${QSYS_ROOTDIR}
+#export PATH=$PATH:${ALTERAPATH}/quartus/bin
+#export PATH=$PATH:$HOME/altera/20.1/modelsim_ase/bin
+#export PATH=$HOME/altera/20.1/modelsim_ase/linux:$PATH
+#export PATH=$PATH:${ALTERAPATH}/nios2eds/bin
+#export PATH=$PATH:${QSYS_ROOTDIR}
 
 export PATH=$PATH:$HOME/scripts
 export TOR_BRWS=$HOME/Apps/tor-browser_en-US/Browser
 export PATH=$PATH:$TOR_BRWS
+export PATH=$HOME/.local/bin:$PATH
+
+export JAVA_HOME=/usr/lib/jvm/openjdk-11
+export PATH=$JAVA_HOME:$PATH
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
