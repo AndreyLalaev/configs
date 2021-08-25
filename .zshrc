@@ -99,7 +99,6 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
-alias jobtime="ssh 192.168.222.178"
 alias vsim="/home/mrgreenstar/altera/20.1/modelsim_ase/bin/vsim"
 
 # Tell grep to highlight matches
