@@ -17,7 +17,10 @@
     },
     "python.linting.pylintArgs": [
         "--max-line-length",
-        "120"
+        "120",
+        "--disable=C0114",
+        "--disable=C0115",
+        "--disable=C0116"
     ],
     "python.formatting.autopep8Args": [
         "--max-line-length",
