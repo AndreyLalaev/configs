@@ -143,3 +143,4 @@ function FormatBuffer()
 endfunction
 
 autocmd BufWritePre *.h,*.hpp,*.c,*.cpp :call FormatBuffer()
+autocmd BufRead,BufNewFile *.bb,*.bbappend,*.inc set filetype=sh
