@@ -56,7 +56,7 @@ set colorcolumn=80
 set clipboard+=unnamedplus
 " Short keys
 nmap <F8> :TagbarToggle<CR>
-map <F5> i -- Andrey Lalaev <a.lalaev@metrotek.ru> <esc>:r !date -R <CR>i<Backspace> <esc>
+map <F5> i -- Andrew Lalaev <andrey.lalaev@gmail.com> <esc>:r !date -R <CR>i<Backspace> <esc>
 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
