@@ -23,8 +23,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 
-Plugin 'ycm-core/YouCompleteMe'
-
 " FOR FUNCTION HIGHLIGHT https://vimawesome.com/plugin/vim-cpp-enhanced-highlight
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vhda/verilog_systemverilog.vim'
@@ -65,9 +63,15 @@ set omnifunc=syntaxcomplete#Complete
 
 set pumheight=7
 set completeopt-=preview
-let g:airline#extensions#tabline#enabled=1
 " air-line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 1
+
+call airline#parts#define('line-info', {
+\ 'raw' : '%l/%L:%v',
+\ 'accent' : 'bold'})
+let g:airline_section_z = airline#section#create(['line-info'])
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
