@@ -99,6 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+path=("$HOME/.cargo/bin" $path)
 alias ip="ip -c"
 alias vim="nvim"
 export LC_ALL=en_US.UTF-8
+
+[ -f "/home/andreylalaev/.ghcup/env" ] && source "/home/andreylalaev/.ghcup/env" # ghcup-env
+alias vlc="MESA_LOADER_DRIVER_OVERRIDE=i965 vlc"
