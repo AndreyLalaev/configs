@@ -14,16 +14,13 @@ general {
         #color_bad       = '#e89393'
 }
 
-#order += "ipv6"
 #order += "disk /"
 order += "disk /home"
 #order += "wireless _first_"
 order += "ethernet _first_"
-order += "run_watch openvpn"
+# order += "run_watch openvpn"
 order += "volume master"
 order += "battery all"
-#order += "load"
-#order += "cpu_temperature 0"
 order += "tztime local"
 
 wireless _first_ {
@@ -31,7 +28,6 @@ wireless _first_ {
         format_up = " %essid"
         #format_down = " : down"
         format_down = ""
-
 }
 
 ethernet _first_ {
@@ -57,6 +53,7 @@ battery all {
 tztime local {
     format = " %-d %b %H:%M"
 }
+
 load {
         format = "%1min"
 }
@@ -75,14 +72,6 @@ volume master {
         device = "pulse"
         mixer = "Master"
         mixer_idx = 0
-}
-
-cpu_temperature 0 {
-        format = "CPU: %degrees C"
-        max_threshold = "75"
-        format_above_threshold = "CPU: %degrees C"
-        path = "/sys/class/thermal/thermal_zone0/temp"
-        path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
 run_watch openvpn {
