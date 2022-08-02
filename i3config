@@ -223,7 +223,7 @@ bar {
 
 # trackpoint sensitivity
 exec xinput --set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Profile Enabled" 1 0
-exec xinput --set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" -0.0
+exec xinput --set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" 0.2
 
 # touchpad sensitivity
 exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.5
