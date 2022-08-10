@@ -110,9 +110,8 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
-for_window [class="^.*"] border pixel 1
 new_window 1pixel
-hide_edge_borders horizontal
+hide_edge_borders smart
 
 # lockscreen with bg
 bindsym $mod+b exec i3lock -t -i /home/$USER/Pictures/lock_screen.png
