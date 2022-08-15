@@ -233,4 +233,5 @@ exec feh --bg-scale /home/$USER/Pictures/wallpaper.jpg
 
 exec compton --vsync drm 2>&1 > /dev/null &
 exec blueman-manager &
+exec xfce4-power-manager &
 exec gxkb 2>&1 > /dev/null &
