@@ -25,13 +25,8 @@ Plugin 'airblade/vim-gitgutter'
 
 " FOR FUNCTION HIGHLIGHT https://vimawesome.com/plugin/vim-cpp-enhanced-highlight
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vhda/verilog_systemverilog.vim'
 
 Plugin 'godlygeek/tabular'
-" RustLang
-Plugin 'rust-lang/rust.vim'
-Plugin 'cespare/vim-toml'
-Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 syntax on
 set scrolloff=1
@@ -132,19 +127,4 @@ inoremap <expr> {<Enter> <SID>CloseBracket()
 setlocal formatprg=hindent
 let g:vim_markdown_folding_disabled = 1
 
-let g:ycm_clangd_uses_ycmd_caching = 0
-let g:ycm_clangd_binary_path = exepath("clangd")
-let g:ycm_show_diagnostics_ui = 0
-
-" autoformatter for c++
-function FormatBuffer()
-  "if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
-   if &modified
-    let cursor_pos = getpos('.')
-    :%!clang-format --style=WebKit
-    call setpos('.', cursor_pos)
-  endif
-endfunction
-
-autocmd BufWritePre *.h,*.hpp,*.c,*.cpp :call FormatBuffer()
 autocmd BufRead,BufNewFile *.bb,*.bbappend,*.inc set filetype=sh
