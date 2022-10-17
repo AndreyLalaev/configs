@@ -124,6 +124,8 @@ function! s:CloseBracket()
 endfunction
 inoremap <expr> {<Enter> <SID>CloseBracket()
 
+nnoremap <esc> :noh<return><esc>
+
 setlocal formatprg=hindent
 let g:vim_markdown_folding_disabled = 1
 
