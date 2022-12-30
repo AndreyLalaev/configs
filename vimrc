@@ -6,7 +6,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
