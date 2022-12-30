@@ -27,6 +27,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 Plugin 'godlygeek/tabular'
+Plugin 'kergoth/vim-bitbake.git'
 
 syntax on
 set scrolloff=1
@@ -128,5 +129,3 @@ nnoremap <esc> :noh<return><esc>
 
 setlocal formatprg=hindent
 let g:vim_markdown_folding_disabled = 1
-
-autocmd BufRead,BufNewFile *.bb,*.bbappend,*.inc set filetype=sh
