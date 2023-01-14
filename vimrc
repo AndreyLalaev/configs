@@ -28,6 +28,8 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'godlygeek/tabular'
 Plugin 'kergoth/vim-bitbake.git'
 
+Plugin 'joe-skb7/cscope-maps'
+
 syntax on
 set scrolloff=1
 colorscheme codedark
