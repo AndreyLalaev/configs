@@ -19,6 +19,7 @@ order += "disk /home"
 #order += "wireless _first_"
 order += "ethernet _first_"
 # order += "run_watch openvpn"
+order += "path_exists WireGuard"
 order += "volume master"
 order += "battery all"
 order += "tztime local"
@@ -80,3 +81,8 @@ run_watch openvpn {
         format_down = ""
 }
 
+path_exists WireGuard {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/wg0"
+        format = "WireGuard"
+}
