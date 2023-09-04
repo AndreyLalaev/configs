@@ -53,6 +53,7 @@ battery all {
 
 tztime local {
     format = " %-d %b %H:%M"
+    locale = "en_US.UTF-8"
 }
 
 load {
