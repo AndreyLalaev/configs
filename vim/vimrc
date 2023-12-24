@@ -7,10 +7,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-"
-" Put your non-Plugin stuff after this line
 Plugin 'tomasiser/vim-code-dark'
 
 "---------=== Code/project navigation ===-------------
@@ -29,6 +25,12 @@ Plugin 'godlygeek/tabular'
 Plugin 'kergoth/vim-bitbake.git'
 
 Plugin 'joe-skb7/cscope-maps'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"
+" Put your non-Plugin stuff after this line
 
 syntax on
 set scrolloff=1
