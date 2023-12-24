@@ -114,7 +114,7 @@ new_window 1pixel
 hide_edge_borders smart
 
 # lockscreen with bg
-bindsym $mod+b exec i3lock -t -i /home/$USER/Pictures/lock_screen.png
+bindsym $mod+b exec i3lock --show-keyboard-layout
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
