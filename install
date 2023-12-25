@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function install_i3() {
+    mkdir -p ~/.config/i3
+    mkdir -p ~/.config/i3status
+
+    install -m 0644 i3/i3config ~/.config/i3/config
+    install -m 0644 i3/i3status_config ~/.config/i3status/config
+}
+
+function install_vim() {
+    mkdir -p ~/.vim/bundle
+
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    
+    install -d vim/ftdetect ~/.vim/
+    install -d vim/ftplugin ~/.vim/
+    install -d vim/plugin ~/.vim/
+}
+
+function install_tmux() {
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+    install -m 0644 tmux/tmux.conf ~/
+    tmux source ~/.tmux.conf
+
+    ~/.tmux/plugins/tpm/bin/install_plugins
+}
+
+function main() {
+    install_i3
+    install_vim
+    install_tmux
+}
+
+main
