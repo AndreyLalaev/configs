@@ -15,6 +15,12 @@ dimensions = { columns = 120, lines = 30 }
 
 [keyboard]
 bindings = [
+    # beginning-of-line
     { key = "Left", mods = "Command", chars = "\u001bOH" },
+    # end-of-line
     { key = "Right", mods = "Command", chars = "\u001bOF" },
+    # backward word
+    { key = "Left", mods = "Option", chars = "\u001bb" },
+    # forward-word
+    { key = "Right", mods = "Option", chars = "\u001bf" },
 ]
