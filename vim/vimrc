@@ -23,6 +23,8 @@ Plugin 'kergoth/vim-bitbake.git'
 
 Plugin 'joe-skb7/cscope-maps'
 
+Plugin 'tpope/vim-obsession'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
