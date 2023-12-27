@@ -27,10 +27,15 @@ function install_tmux() {
     ~/.tmux/plugins/tpm/bin/install_plugins
 }
 
+function install_scripts() {
+    install -m 0755 scripts/* ~/.local/bin
+}
+
 function main() {
     install_i3
     install_vim
     install_tmux
+    install_scripts
 }
 
 main
