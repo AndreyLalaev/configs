@@ -41,6 +41,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
+# Display button (F7)
+bindsym XF86Display exec --no-startup-id /home/$USER/.local/bin/external_display.sh
+
 # Screenshots
 bindsym Print --release exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 bindsym Shift+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
@@ -172,10 +175,6 @@ bindsym $mod+Ctrl+Shift+7 move container to workspace $ws17
 bindsym $mod+Ctrl+Shift+8 move container to workspace $ws18
 bindsym $mod+Ctrl+Shift+9 move container to workspace $ws19
 bindsym $mod+Ctrl+Shift+0 move container to workspace $ws20
-
-# move focused container to workspace
-# Display button (F7)
-bindsym XF86Display exec --no-startup-id /home/$USER/scripts/external_display
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
