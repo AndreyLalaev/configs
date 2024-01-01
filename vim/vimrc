@@ -19,6 +19,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
+" FOR FUNCTION HIGHLIGHT https://vimawesome.com/plugin/vim-cpp-enhanced-highlight
+Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'kergoth/vim-bitbake.git'
 
 Plugin 'joe-skb7/cscope-maps'
