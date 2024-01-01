@@ -49,6 +49,9 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set colorcolumn=80
+
+set hlsearch
+
 set clipboard+=unnamedplus
 " Short keys
 nmap <F8> :TagbarToggle<CR>
