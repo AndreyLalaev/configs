@@ -54,7 +54,15 @@ set colorcolumn=80
 
 set is hlsearch
 
-set clipboard+=unnamedplus
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    set clipboard=unnamed
+  else
+    set clipboard=unnamedplus
+  endif
+endif
+
 " Short keys
 nmap <F8> :TagbarToggle<CR>
 map <F5> i -- Andrew Lalaev <andrey.lalaev@gmail.com> <esc>:r !date -R <CR>i<Backspace> <esc>
