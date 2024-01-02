@@ -52,7 +52,7 @@ set shiftwidth=8
 set expandtab
 set colorcolumn=80
 
-set hlsearch
+set is hlsearch
 
 set clipboard+=unnamedplus
 " Short keys
