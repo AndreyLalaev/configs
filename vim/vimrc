@@ -40,6 +40,7 @@ colorscheme codedark
 set enc=utf-8
 set ls=2
 set mouse=a
+set ttymouse=xterm2
 set splitbelow
 set number
 " disable folding
