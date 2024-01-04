@@ -64,6 +64,9 @@ if has("unix")
   endif
 endif
 
+set wildmenu
+set wildmode=longest:full,full
+
 " Short keys
 nmap <F8> :TagbarToggle<CR>
 map <F5> i -- Andrew Lalaev <andrey.lalaev@gmail.com> <esc>:r !date -R <CR>i<Backspace> <esc>
