@@ -19,6 +19,7 @@ bold_italic = { family = "Hack Nerd Font Mono", style = "Bold Italic" }
 
 [window]
 dimensions = { columns = 120, lines = 30 }
+option_as_alt = "OnlyLeft"
 
 [keyboard]
 bindings = [
