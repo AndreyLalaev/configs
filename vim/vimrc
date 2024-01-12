@@ -104,5 +104,3 @@ endfunction
 inoremap <expr> {<Enter> <SID>CloseBracket()
 
 nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
-
-setlocal formatprg=hindent
