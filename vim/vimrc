@@ -67,6 +67,11 @@ endif
 set wildmenu
 set wildmode=longest:full,full
 
+" set up different cursor for insert, replace and normal modes
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
 " Short keys
 nmap <F8> :TagbarToggle<CR>
 map <F5> i -- Andrew Lalaev <andrey.lalaev@gmail.com> <esc>:r !date -R <CR>i<Backspace> <esc>
