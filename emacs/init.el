@@ -14,6 +14,8 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file t)
 
+(set-frame-font "Hack Nerd Font Mono-14" nil t)
+
 (use-package vscode-dark-plus-theme
   :ensure t
   :config
