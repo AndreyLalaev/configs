@@ -23,3 +23,6 @@
 
 (use-package vimrc-mode)
 (use-package magit)
+(use-package git-gutter
+  :config
+  (global-git-gutter-mode +1))
