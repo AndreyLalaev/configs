@@ -25,6 +25,9 @@
 
 (set-frame-font "Hack Nerd Font Mono-14" nil t)
 
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(setq ring-bell-function 'ignore)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
 (use-package vscode-dark-plus-theme
