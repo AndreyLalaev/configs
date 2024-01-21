@@ -14,6 +14,11 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file t)
 
+;; move autosave-files to /tmp
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 (set-frame-font "Hack Nerd Font Mono-14" nil t)
 
 (use-package vscode-dark-plus-theme
