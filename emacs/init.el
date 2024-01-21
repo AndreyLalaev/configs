@@ -19,6 +19,10 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+(when (string= system-type "darwin")
+  (setq dired-use-ls-dired nil))
+
 (set-frame-font "Hack Nerd Font Mono-14" nil t)
 
 (use-package vscode-dark-plus-theme
