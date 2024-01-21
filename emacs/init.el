@@ -40,5 +40,9 @@
 (use-package git-gutter
   :config
   (global-git-gutter-mode +1))
+
+(use-package bitbake)
+(use-package buffer-move)
+
 (add-to-list 'auto-mode-alist '("\\.fragment\\'" . conf-unix-mode))
 (add-to-list 'auto-mode-alist '("defconfig\\'" . conf-unix-mode))
