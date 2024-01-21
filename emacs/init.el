@@ -25,6 +25,8 @@
 
 (set-frame-font "Hack Nerd Font Mono-14" nil t)
 
+(global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
+
 (use-package vscode-dark-plus-theme
   :ensure t
   :config
