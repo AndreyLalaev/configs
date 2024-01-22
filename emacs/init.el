@@ -28,6 +28,7 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (setq global-column-number-mode t)
 (setq ring-bell-function 'ignore)
+(tool-bar-mode -1)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
