@@ -29,6 +29,7 @@
 (setq global-column-number-mode t)
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
