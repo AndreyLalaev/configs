@@ -31,6 +31,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+(setq ido-enable-flex-matching t)
+(setq ido-enable-prefix t)
+(ido-mode 1)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
 (use-package vscode-dark-plus-theme
