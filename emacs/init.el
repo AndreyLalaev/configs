@@ -26,7 +26,10 @@
 (set-frame-font "Hack Nerd Font Mono-14" nil t)
 
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(setq global-column-number-mode t)
+(setq column-number-mode t)
+(global-display-fill-column-indicator-mode t)
+(setq-default display-fill-column-indicator-column 79)
+
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -44,10 +47,10 @@
   (load-theme 'vscode-dark-plus t))
 
 (use-package vimrc-mode)
-(use-package magit)
 (use-package dockerfile-mode)
 (use-package cmake-mode)
 
+(use-package magit)
 (use-package git-gutter
   :config
   (global-git-gutter-mode +1))
