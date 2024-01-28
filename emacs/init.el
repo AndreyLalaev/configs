@@ -35,6 +35,10 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
+(setq ediff-keep-variants nil)
+(setq ediff-split-window-function 'split-window-horizontally)
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
 (setq ido-enable-flex-matching t)
 (setq ido-enable-prefix t)
 (ido-mode 1)
