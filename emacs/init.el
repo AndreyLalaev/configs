@@ -45,12 +45,25 @@
 
 (use-package vimrc-mode)
 (use-package magit)
+(use-package dockerfile-mode)
+(use-package cmake-mode)
+
 (use-package git-gutter
   :config
   (global-git-gutter-mode +1))
 
 (use-package bitbake)
 (use-package buffer-move)
+
+(use-package tree-sitter)
+(use-package tree-sitter-langs)
+
+(global-tree-sitter-mode)
+
+(add-hook 'c-mode-hook #'tree-sitter-hl-mode)
+(add-hook 'c++-mode-hook #'tree-sitter-hl-mode)
+(add-hook 'sh-mode-hook #'tree-sitter-hl-mode)
+(add-hook 'dockerfile-mode-hook #'tree-sitter-hl-mode)
 
 (add-to-list 'auto-mode-alist '("\\.fragment\\'" . conf-unix-mode))
 (add-to-list 'auto-mode-alist '("defconfig\\'" . conf-unix-mode))
