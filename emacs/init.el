@@ -53,6 +53,8 @@
 (use-package vimrc-mode)
 (use-package dockerfile-mode)
 (use-package cmake-mode)
+(use-package dts-mode)
+(use-package systemd)
 
 (use-package magit)
 (use-package git-gutter
