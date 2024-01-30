@@ -85,6 +85,11 @@
   (global-set-key (kbd "C-c F") 'counsel-org-file)
   (ivy-mode 1))
 
+(use-package projectile
+  :config
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
+
 (use-package vimrc-mode)
 (use-package dockerfile-mode)
 (use-package cmake-mode)
