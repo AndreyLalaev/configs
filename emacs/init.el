@@ -90,6 +90,18 @@
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
 
+(use-package perspective
+  :bind
+  ("C-x C-b" . (lambda (arg)
+                  (interactive "P")
+                  (if (fboundp 'persp-ivy-switch-buffer)
+                      (persp-ivy-switch-buffer arg)
+                    (persp-ivy-switch-buffer "all"))))
+  :custom
+  (persp-mode-prefix-key (kbd "C-z"))
+  :init
+  (persp-mode))
+
 (use-package vimrc-mode)
 (use-package dockerfile-mode)
 (use-package cmake-mode)
