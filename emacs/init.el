@@ -122,6 +122,7 @@
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
+  (setq evil-toggle-key "C-`")
   :config
   (evil-mode 1))
 
