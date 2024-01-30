@@ -39,16 +39,18 @@
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
-(setq ido-enable-flex-matching t)
-(setq ido-enable-prefix t)
-(ido-mode 1)
-
 (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
 
 (use-package vscode-dark-plus-theme
   :ensure t
   :config
   (load-theme 'vscode-dark-plus t))
+
+(use-package counsel
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (ivy-mode 1))
 
 (use-package vimrc-mode)
 (use-package dockerfile-mode)
