@@ -109,7 +109,16 @@
 (use-package vimrc-mode)
 (use-package dockerfile-mode)
 (use-package cmake-mode)
-(use-package dts-mode)
+
+(defun dts-indent-hook()
+  (setq tab-width 8)
+  (setq indent-tabs-mode t)
+  (setq tab-always-indent nil))
+
+(use-package dts-mode
+  :config
+  (add-hook 'dts-mode-hook #'dts-indent-hook))
+
 (use-package systemd)
 
 (use-package magit)
