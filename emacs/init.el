@@ -119,6 +119,7 @@
 (use-package dts-mode
   :config
   (add-hook 'dts-mode-hook #'dts-indent-hook))
+(use-package kconfig-mode)
 
 (use-package systemd)
 
