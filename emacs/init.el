@@ -135,6 +135,7 @@
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
   (setq evil-toggle-key "C-`")
+  (add-hook 'git-commit-mode-hook 'evil-insert-state)
   :config
   (evil-mode 1))
 
