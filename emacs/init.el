@@ -133,6 +133,8 @@
 (add-to-list 'auto-mode-alist '("\\.fragment\\'" . conf-unix-mode))
 (add-to-list 'auto-mode-alist '("defconfig\\'" . conf-unix-mode))
 
+(setq c-default-style "linux")
+
 (use-package evil
   :ensure t
   :init
