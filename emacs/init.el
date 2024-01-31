@@ -38,6 +38,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+(show-paren-mode 1)
 
 (setq ediff-keep-variants nil)
 (setq ediff-split-window-function 'split-window-horizontally)
