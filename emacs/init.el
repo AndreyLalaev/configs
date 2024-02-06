@@ -107,6 +107,10 @@
   :init
   (persp-mode))
 
+(use-package minions
+  :init
+  (minions-mode))
+
 (use-package vimrc-mode)
 (use-package dockerfile-mode)
 (use-package cmake-mode)
