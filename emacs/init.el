@@ -51,6 +51,10 @@
   :config
   (load-theme 'vscode-dark-plus t))
 
+(use-package which-key
+  :init
+  (which-key-mode))
+
 (use-package counsel
   :config
   (setq ivy-use-virtual-buffers t)
