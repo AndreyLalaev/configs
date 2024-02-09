@@ -154,6 +154,26 @@
 
 (setq c-default-style "linux")
 
+(use-package vterm
+  :config
+  (custom-set-faces
+  '(vterm-color-black          ((t (:foreground "#2e3436" :background "#2e3436"))))
+  '(vterm-color-red            ((t (:foreground "#cc0000" :background "#cc0000"))))
+  '(vterm-color-green          ((t (:foreground "#4e9a06" :background "#4e9a06"))))
+  '(vterm-color-yellow         ((t (:foreground "#c4a000" :background "#c4a000"))))
+  '(vterm-color-blue           ((t (:foreground "#3465a4" :background "#3465a4"))))
+  '(vterm-color-magenta        ((t (:foreground "#75507b" :background "#75507b"))))
+  '(vterm-color-cyan           ((t (:foreground "#06989a" :background "#06989a"))))
+  '(vterm-color-white          ((t (:foreground "#d3d7cf" :background "#d3d7cf"))))
+  '(vterm-color-bright-black   ((t (:foreground "#555753" :background "#555753"))))
+  '(vterm-color-bright-red     ((t (:foreground "#ef2929" :background "#ef2929"))))
+  '(vterm-color-bright-green   ((t (:foreground "#8ae234" :background "#8ae234"))))
+  '(vterm-color-bright-yellow  ((t (:foreground "#fce94f" :background "#fce94f"))))
+  '(vterm-color-bright-blue    ((t (:foreground "#729fcf" :background "#729fcf"))))
+  '(vterm-color-bright-magenta ((t (:foreground "#ad7fa8" :background "#ad7fa8"))))
+  '(vterm-color-bright-cyan    ((t (:foreground "#34e2e2" :background "#34e2e2"))))
+  '(vterm-color-bright-white   ((t (:foreground "#eeeeec" :background "#eeeeec"))))))
+
 (use-package evil
   :ensure t
   :init
