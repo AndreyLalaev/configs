@@ -1,6 +1,6 @@
 [user]
-	name = Andrew Lalaev
-	email = andrew.lalaev@emlid.com
+	name = Andrei Lalaev
+	email = andrey.lalaev@gmail.com
 [alias]
 	hist = log --pretty=format:'%C(yellow)%ad%C(reset) %C(green)%h%C(reset) %C(bold blue)%an%C(reset) %C(auto)%d%C(reset) %C(white)%s' --all  --graph --date=short
 [core]
