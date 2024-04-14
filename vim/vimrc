@@ -55,6 +55,7 @@ set expandtab
 set colorcolumn=80
 
 set is hlsearch
+set cursorline
 
 if has("unix")
   let s:uname = system("uname")
