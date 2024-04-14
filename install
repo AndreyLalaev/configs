@@ -13,6 +13,7 @@ function install_vim() {
 
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     
+    install vim/vimrc ~/.vimrc
     install -d vim/ftdetect ~/.vim/
     install -d vim/ftplugin ~/.vim/
     install -d vim/plugin ~/.vim/
@@ -21,7 +22,7 @@ function install_vim() {
 function install_tmux() {
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-    install -m 0644 tmux/tmux.conf ~/
+    install -m 0644 tmux/tmux.conf ~/.tmux.conf
     tmux source ~/.tmux.conf
 
     ~/.tmux/plugins/tpm/bin/install_plugins
