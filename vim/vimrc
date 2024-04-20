@@ -19,6 +19,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'hotwatermorning/auto-git-diff'
+Plugin 'habamax/vim-rst'
 
 " FOR FUNCTION HIGHLIGHT https://vimawesome.com/plugin/vim-cpp-enhanced-highlight
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -106,3 +107,14 @@ endfunction
 inoremap <expr> {<Enter> <SID>CloseBracket()
 
 nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
+let g:rst_syntax_code_list = {
+    \ 'vim': ['vim'],
+    \ 'java': ['java'],
+    \ 'cpp': ['cpp', 'c++'],
+    \ 'c': ['c', 'c'],
+    \ 'lisp': ['lisp'],
+    \ 'php': ['php'],
+    \ 'python': ['python'],
+    \ 'perl': ['perl'],
+    \ 'sh': ['sh'],
+    \ }
