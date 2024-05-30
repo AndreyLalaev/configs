@@ -14,9 +14,9 @@ function install_vim() {
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     
     install vim/vimrc ~/.vimrc
-    install -d vim/ftdetect ~/.vim/
-    install -d vim/ftplugin ~/.vim/
-    install -d vim/plugin ~/.vim/
+    cp -r vim/ftdetect ~/.vim/
+    cp -r vim/ftplugin ~/.vim/
+    cp -r vim/plugin ~/.vim/
 }
 
 function install_tmux() {
