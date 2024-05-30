@@ -109,6 +109,8 @@ alias uipk="ar -xv"
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
 
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+
 DEBEMAIL="andrey.lalaev@gmail.com"
 DEBMAIL=$DEBEMAIL
 DEBFULLNAME="Andrei Lalaev"
