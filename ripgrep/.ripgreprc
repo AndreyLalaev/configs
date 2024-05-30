@@ -1,0 +1,8 @@
+--smart-case
+
+--hidden
+
+--no-heading
+
+--glob=!.git/*
+--glob=!tags
