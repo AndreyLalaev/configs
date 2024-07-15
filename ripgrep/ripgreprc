@@ -1,0 +1,10 @@
+--smart-case
+
+--hidden
+
+--no-heading
+
+--no-ignore-vcs
+
+--glob=!.git/*
+--glob=!tags
