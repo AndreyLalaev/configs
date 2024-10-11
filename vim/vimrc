@@ -38,6 +38,7 @@ filetype plugin indent on    " required
 syntax on
 set scrolloff=1
 colorscheme codedark
+set notermguicolors
 
 set enc=utf-8
 set ls=2
