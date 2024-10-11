@@ -42,7 +42,9 @@ colorscheme codedark
 set enc=utf-8
 set ls=2
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 set splitbelow
 set number
 " disable folding
