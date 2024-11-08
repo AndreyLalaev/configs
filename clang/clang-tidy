@@ -1,0 +1,76 @@
+Checks:             '*,
+                    -altera-id-dependent-backward-branch,
+                    -altera-struct-pack-align,
+                    -altera-unroll-loops,
+                    -cert-dcl37-c,
+                    -cert-dcl50-cpp,
+                    -cert-dcl51-cpp,
+                    -cert-env33-c,
+                    -cert-err58-cpp,
+                    -cppcoreguidelines-avoid-magic-numbers,
+                    -cppcoreguidelines-avoid-non-const-global-variables,
+                    -cppcoreguidelines-macro-usage,
+                    -cppcoreguidelines-non-private-member-variables-in-classes,
+                    -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+                    -cppcoreguidelines-pro-type-cstyle-cast,
+                    -cppcoreguidelines-pro-type-reinterpret-cast,
+                    -cppcoreguidelines-pro-type-vararg,
+                    -cppcoreguidelines-pro-type-union-access,
+                    -cppcoreguidelines-special-member-functions,
+                    -concurrency-mt-unsafe,
+                    -bugprone-easily-swappable-parameters,
+                    -bugprone-reserved-identifier,
+                    -fuchsia-default-arguments-calls,
+                    -fuchsia-default-arguments-declarations,
+                    -fuchsia-overloaded-operator,
+                    -fuchsia-statically-constructed-objects,
+                    -fuchsia-trailing-return,
+                    -hicpp-no-assembler,
+                    -hicpp-special-member-functions,
+                    -hicpp-vararg,
+                    -llvm-include-order,
+                    -llvm-header-guard,
+                    -llvmlibc-callee-namespace,
+                    -llvmlibc-implementation-in-namespace,
+                    -llvmlibc-restrict-system-libc-headers,
+                    -misc-non-private-member-variables-in-classes,
+                    -modernize-avoid-bind,
+                    -modernize-use-nodiscard,
+                    -modernize-use-trailing-return-type,
+                    -readability-convert-member-functions-to-static,
+                    -readability-suspicious-call-argument,
+                    -readability-use-anyofallof'
+WarningsAsErrors:   '*'
+HeaderFilterRegex:  '(include/reach/.*\.h)|(app/.*\.h)'
+FormatStyle:        'file'
+CheckOptions:
+  # Options
+  - {key: modernize-use-override.IgnoreDestructors,                   value: 1}
+  - {key: hicpp-use-override.IgnoreDestructors,                       value: 1}
+  - {key: readability-magic-numbers.IgnorePowersOf2IntegerValues,     value: 1}
+  - {key: readability-magic-numbers.IgnoredIntegerValues,             value: '1;2;3;4;1000;1000000'}
+  # Naming convention
+  - {key: readability-identifier-naming.ClassCase,                    value: CamelCase}
+  - {key: readability-identifier-naming.ClassConstantCase,            value: UPPER_CASE}
+  - {key: readability-identifier-naming.ClassMemberCase,              value: lower_case}
+  - {key: readability-identifier-naming.ClassMemberPrefix,,           value: 'm_'}
+  - {key: readability-identifier-naming.ClassMethodCase,              value: camelBack}
+  - {key: readability-identifier-naming.ClassMethodIgnoredRegexp,     value: '^IP.*'}
+  - {key: readability-identifier-naming.ConstexprVariableCase,        value: UPPER_CASE}
+  - {key: readability-identifier-naming.EnumCase,                     value: CamelCase}
+  - {key: readability-identifier-naming.EnumConstantCase,             value: UPPER_CASE}
+  - {key: readability-identifier-naming.FunctionCase,                 value: camelBack}
+  - {key: readability-identifier-naming.GlobalConstantCase,           value: UPPER_CASE}
+  - {key: readability-identifier-naming.MacroDefinitionCase,          value: UPPER_CASE}
+  - {key: readability-identifier-naming.MemberCase,                   value: lower_case}
+  - {key: readability-identifier-naming.MethodCase,                   value: camelBack}
+  - {key: readability-identifier-naming.NamespaceCase,                value: CamelCase}
+  - {key: readability-identifier-naming.ParameterCase,                value: lower_case}
+  - {key: readability-identifier-naming.StaticConstantCase,           value: UPPER_CASE}
+  - {key: readability-identifier-naming.StaticVariableCase,           value: lower_case}
+  - {key: readability-identifier-naming.StructCase,                   value: lower_case}
+  - {key: readability-identifier-naming.StructSuffix,                 value: '_t'}
+  - {key: readability-identifier-naming.TypeAliasCase,                value: CamelCase}
+  - {key: readability-identifier-naming.TypedefCase,                  value: CamelCase}
+  - {key: readability-identifier-naming.TypeTemplateParameterCase,    value: CamelCase}
+  - {key: readability-identifier-naming.VariableCase,                 value: lower_case}
