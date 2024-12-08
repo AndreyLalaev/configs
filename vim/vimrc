@@ -81,8 +81,6 @@ let &t_EI = "\<Esc>[2 q"
 nmap <F8> :TagbarToggle<CR>
 map <F5> i -- Andrew Lalaev <andrey.lalaev@gmail.com> <esc>:r !date -R <CR>i<Backspace> <esc>
 
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-
 set omnifunc=syntaxcomplete#Complete
 :autocmd InsertEnter,InsertLeave * set cul!
 
