@@ -18,7 +18,6 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'hotwatermorning/auto-git-diff'
 Plugin 'habamax/vim-rst'
 
 " FOR FUNCTION HIGHLIGHT https://vimawesome.com/plugin/vim-cpp-enhanced-highlight
