@@ -9,3 +9,5 @@
 	rebase = false
 [safe]
 	directory = *
+[commit]
+	verbose = true
