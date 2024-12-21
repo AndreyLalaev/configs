@@ -28,6 +28,9 @@ Plugin 'joe-skb7/cscope-maps'
 
 Plugin 'tpope/vim-obsession'
 
+Plugin 'rust-lang/rust.vim'
+Plugin 'ycm-core/YouCompleteMe'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -90,6 +93,29 @@ set completeopt-=preview
 let g:NERDSpaceDelims=1
 let g:NERDCompactSexyComs=1
 let g:NERDCustomDelimiters={ 'c': { 'left': '/**','right': '*/' } }
+
+let g:rustfmt_autosave = 1
+let g:ycm_rust_toolchain_root = $HOME . '/.cargo/'
+
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Disable hover by default, but can be toggled with leader + D
+let g:ycm_auto_hover = ''
+nmap <leader>D <plug>(YCMHover)
+augroup MyYCMCustom
+        autocmd!
+        autocmd FileType c,cpp let b:ycm_hover = {
+                \ 'command': 'GetDoc',
+                \ 'syntax': &filetype
+                \ }
+        autocmd FileType rust let b:ycm_hover = {
+                \ 'command': 'GetDoc',
+                \ 'syntax': &filetype
+                \ }
+augroup END
+
 
 "auto close {
 function! s:CloseBracket()
