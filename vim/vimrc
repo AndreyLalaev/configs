@@ -108,6 +108,12 @@ nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
 
+let g:cmake_build_dir_location = "build/"
+" Turn off clang-tidy if there is no config
+if !filereadable(".clang-tidy")
+    let g:ycm_clangd_args = ["--clang-tidy=0"]
+endif
+
 " Disable hover by default, but can be toggled with leader + D
 let g:ycm_auto_hover = ''
 nmap <leader>D <plug>(YCMHover)
