@@ -97,7 +97,9 @@ let g:NERDCustomDelimiters={ 'c': { 'left': '/**','right': '*/' } }
 
 let g:rustfmt_autosave = 1
 let g:ycm_rust_toolchain_root = $HOME . '/.cargo/'
-let g:ycm_clangd_binary_path="/usr/bin/clangd"
+let g:ycm_clangd_binary_path = "/usr/bin/clangd"
+
+let g:clang_format#auto_filetypes = ["cpp"]
 
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
