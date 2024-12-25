@@ -30,6 +30,7 @@ Plugin 'tpope/vim-obsession'
 
 Plugin 'rust-lang/rust.vim'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'rhysd/vim-clang-format'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -96,10 +97,14 @@ let g:NERDCustomDelimiters={ 'c': { 'left': '/**','right': '*/' } }
 
 let g:rustfmt_autosave = 1
 let g:ycm_rust_toolchain_root = $HOME . '/.cargo/'
+let g:ycm_clangd_binary_path="/usr/bin/clangd"
 
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1
 
 " Disable hover by default, but can be toggled with leader + D
 let g:ycm_auto_hover = ''
