@@ -41,7 +41,7 @@ Checks:             '*,
                     -readability-suspicious-call-argument,
                     -readability-use-anyofallof'
 WarningsAsErrors:   '*'
-HeaderFilterRegex:  '(include/reach/.*\.h)|(app/.*\.h)'
+HeaderFilterRegex:  '(include/.*\.h)|(include/.*\.hpp)|(app/.*\.h)'
 FormatStyle:        'file'
 CheckOptions:
   # Options
@@ -49,6 +49,8 @@ CheckOptions:
   - {key: hicpp-use-override.IgnoreDestructors,                       value: 1}
   - {key: readability-magic-numbers.IgnorePowersOf2IntegerValues,     value: 1}
   - {key: readability-magic-numbers.IgnoredIntegerValues,             value: '1;2;3;4;1000;1000000'}
+  - {key: readability-identifier-length.IgnoredVariableNames,         value: 'fd'}
+  - {key: readability-identifier-length.IgnoredParameterNames,        value: 'fd'}
   # Naming convention
   - {key: readability-identifier-naming.ClassCase,                    value: CamelCase}
   - {key: readability-identifier-naming.ClassConstantCase,            value: UPPER_CASE}
