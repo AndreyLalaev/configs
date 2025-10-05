@@ -28,6 +28,8 @@ Plugin 'joe-skb7/cscope-maps'
 
 Plugin 'tpope/vim-obsession'
 
+Plugin 'junegunn/fzf'
+
 Plugin 'rust-lang/rust.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
@@ -148,6 +150,7 @@ endfunction
 inoremap <expr> {<Enter> <SID>CloseBracket()
 
 nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
+nnoremap <silent> <C-f> :FZF<CR>
 let g:rst_syntax_code_list = {
     \ 'vim': ['vim'],
     \ 'java': ['java'],
