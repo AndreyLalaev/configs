@@ -7,4 +7,5 @@
 --no-ignore-vcs
 
 --glob=!.git/*
+--glob=!.cache/*
 --glob=!tags
