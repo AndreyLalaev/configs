@@ -56,6 +56,8 @@ set number
 " disable folding
 set nofoldenable
 
+set belloff=all
+
 " Tab settings
 set tabstop=8
 set softtabstop=8
