@@ -164,3 +164,7 @@ let g:rst_syntax_code_list = {
     \ 'perl': ['perl'],
     \ 'sh': ['sh'],
     \ }
+
+highlight YcmWarningLine guibg=#ffffcc
+highlight YcmWarningSign guibg=#ffffcc
+highlight YcmWarningSection guibg=#ffffcc
