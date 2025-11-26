@@ -121,3 +121,6 @@ export PATH=${PATH}:~/.cargo/bin/
 
 SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export SSH_AUTH_SOCK
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
