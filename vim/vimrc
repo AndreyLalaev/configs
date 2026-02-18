@@ -110,6 +110,7 @@ let g:clang_format#auto_filetypes = ["cpp"]
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
 
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
