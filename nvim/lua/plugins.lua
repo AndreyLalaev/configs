@@ -19,5 +19,12 @@ return {
     config = function()
       vim.g.rustfmt_autosave = 1
     end,
-  }
+  },
+  {
+    "stevearc/oil.nvim",
+    lazy = false,
+    opts = {
+      default_file_explorer = true,
+    },
+  },
 }
