@@ -28,7 +28,7 @@ return {
        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to Previous Diagnostic" })
        -- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostic to local list" })
 
-       vim.lsp.enable('clangd')
+       vim.lsp.enable({'bashls', 'clangd', 'rust_analyzer'})
        vim.diagnostic.config({ virtual_text = true })
      end,
   },
