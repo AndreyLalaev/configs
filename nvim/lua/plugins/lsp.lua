@@ -1,5 +1,70 @@
 return {
   {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    branch = "main",
+    lazy = false,
+    opts = {
+      ensure_installed = {
+        "asm",
+        "bash",
+        "bitbake",
+        "c",
+        "cmake",
+        "cpp",
+        "diff",
+        "dockerfile",
+        "git_config",
+        "git_rebase",
+        "gitcommit",
+        "kconfig",
+        "linkerscript",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "meson",
+        "python",
+        "rst",
+        "rust",
+        "udev",
+        "yaml",
+        "zig",
+      },
+    },
+    config = function(_, opts)
+      local TS = require("nvim-treesitter")
+      TS.install(opts.ensure_installed)
+
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter.setup", {}),
+        callback = function(args)
+          local buf = args.buf
+          local filetype = args.match
+
+          -- you need some mechanism to avoid running on buffers that do not
+          -- correspond to a language (like oil.nvim buffers), this implementation
+          -- checks if a parser exists for the current language
+          local language = vim.treesitter.language.get_lang(filetype) or filetype
+          if not vim.treesitter.language.add(language) then
+            return
+          end
+
+          -- replicate `fold = { enable = true }`
+          -- vim.wo.foldmethod = "expr"
+          -- vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+          -- replicate `highlight = { enable = true }`
+          vim.treesitter.start(buf, language)
+
+          -- replicate `indent = { enable = true }`
+          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+          -- `incremental_selection = { enable = true }` cannot be easily replicated
+        end,
+      })
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
      config = function()
        vim.lsp.config.clangd = {
@@ -16,7 +81,6 @@ return {
 
        vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
-       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
        vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
