@@ -1,11 +1,10 @@
 return {
   {
-    "tomasiser/vim-code-dark",
-
+    'Mofiqul/vscode.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme codedark]])
+      vim.cmd([[colorscheme vscode]])
     end,
   },
   {
