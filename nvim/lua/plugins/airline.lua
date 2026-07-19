@@ -21,7 +21,14 @@ return {
               'buffers',
               mode = 4, -- Shows buffer name + buffer number
               buffers_color = {
-                active = 'lualine_a_normal',
+                active = function(section)
+                  if vim.bo.modified then
+                    local c = require('vscode.colors').get_colors()
+                    return {fg = "#000000", bg = c.vscDarkYellow}
+                  end
+                  return 'lualine_a_normal'
+                end,
+
                 inactive = function(section)
                   local c = require('vscode.colors').get_colors()
                   return {c.vscGray}
