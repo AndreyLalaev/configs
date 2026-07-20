@@ -6,3 +6,7 @@ vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohl<cr>", { desc = "Turn off search hig
 vim.api.nvim_create_user_command('E', function(opts)
   vim.cmd('Oil ' .. opts.args)
 end, { nargs = '*', desc = 'Open Oil file explorer' })
+
+vim.filetype.add({
+  extension = {rules = 'udevrules'}
+})
