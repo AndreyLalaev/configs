@@ -6,7 +6,7 @@ return {
       theme = 'vscode',
       sections = {
         lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_b = {'branch', 'diff', {'diagnostics', icons_enabled = false}},
         lualine_c = {'filename'},
         lualine_x = {'encoding', {'fileformat', icons_enabled = false}, 'filetype'},
         lualine_y = {},
