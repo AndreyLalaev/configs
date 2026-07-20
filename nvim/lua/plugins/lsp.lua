@@ -90,10 +90,10 @@ return {
        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to Next Diagnostic" })
        vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Open Diagnostic Float" })
        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to Previous Diagnostic" })
-       -- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostic to local list" })
+       vim.keymap.set("n", "<C-d>", vim.diagnostic.setloclist, { desc = "Diagnostic to local list" })
 
        vim.lsp.enable({'bashls', 'clangd', 'rust_analyzer'})
-       vim.diagnostic.config({ virtual_text = true })
+       vim.diagnostic.config({ virtual_text = false, virtual_lines = true })
      end,
   },
   {
