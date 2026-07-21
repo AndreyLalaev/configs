@@ -7,7 +7,7 @@ return {
       sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', {'diagnostics', icons_enabled = false}},
-        lualine_c = {'filename'},
+        lualine_c = {{'filename', path = 1}},
         lualine_x = {'encoding', {'fileformat', icons_enabled = false}, 'filetype'},
         lualine_y = {},
         lualine_z = {"%l/%L:%v"}
@@ -19,6 +19,7 @@ return {
           lualine_c = {
             {
               'buffers',
+              show_filename_only = false,
               mode = 4, -- Shows buffer name + buffer number
               buffers_color = {
                 active = function(section)
