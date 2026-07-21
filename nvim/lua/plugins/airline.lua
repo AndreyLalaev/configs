@@ -21,6 +21,7 @@ return {
               'buffers',
               show_filename_only = false,
               mode = 4, -- Shows buffer name + buffer number
+              max_length = vim.o.columns * 3 / 4,
               buffers_color = {
                 active = function(section)
                   if vim.bo.modified then
