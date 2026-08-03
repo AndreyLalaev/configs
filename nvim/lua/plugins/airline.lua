@@ -8,7 +8,14 @@ return {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', {'diagnostics', icons_enabled = false}},
         lualine_c = {{'filename', path = 1}},
-        lualine_x = {'encoding', {'fileformat', icons_enabled = false}, 'filetype'},
+        lualine_x = {
+          function()
+            return vim.fn['tagbar#currenttag']('%s', '', 'f')
+          end,
+          'encoding',
+          { 'fileformat', icons_enabled = false },
+          'filetype',
+        },
         lualine_y = {},
         lualine_z = {"%l/%L:%v"}
       },
@@ -21,7 +28,11 @@ return {
               'buffers',
               show_filename_only = false,
               mode = 4, -- Shows buffer name + buffer number
-              max_length = vim.o.columns * 3 / 4,
+
+              max_length = function()
+                return vim.o.columns * 3 / 4
+              end,
+
               buffers_color = {
                 active = function(section)
                   if vim.bo.modified then
