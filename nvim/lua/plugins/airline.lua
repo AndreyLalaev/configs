@@ -28,11 +28,6 @@ return {
               'buffers',
               show_filename_only = false,
               mode = 4, -- Shows buffer name + buffer number
-              fmt = function(str, ctx)
-                -- get file full path
-                local fp = vim.fn.expand('%:p')
-                return vim.fn.fnamemodify(fp, ':h:t') .. '/' .. vim.fn.fnamemodify(fp, ':t')
-              end,
 
               max_length = function()
                 return vim.o.columns * 3 / 4
