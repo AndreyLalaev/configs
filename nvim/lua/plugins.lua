@@ -8,9 +8,14 @@ return {
     end,
   },
   {
+    -- dependency of fzf.vim (https://github.com/junegunn/fzf.vim#installation)
     "junegunn/fzf",
+  },
+  {
+    'junegunn/fzf.vim',
     keys = {
       {"<C-f>", "<cmd>:FZF<cr>"},
+      {"<C-g>", "<cmd>:RG<cr>"},
     },
   },
   {
