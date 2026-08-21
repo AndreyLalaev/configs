@@ -8,7 +8,6 @@ return {
       ensure_installed = {
         "asm",
         "bash",
-        "bitbake",
         "c",
         "cmake",
         "cpp",
