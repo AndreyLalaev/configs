@@ -3,6 +3,7 @@ require("config.lazy")
 vim.wo.number = true
 vim.wo.cursorline = true
 vim.opt.splitbelow = true
+vim.opt.swapfile = false
 
 vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohl<cr>", { desc = "Turn off search highlight" })
 
