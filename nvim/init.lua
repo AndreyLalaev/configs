@@ -24,7 +24,10 @@ vim.api.nvim_create_user_command('E', function(opts)
 end, { nargs = '*', desc = 'Open Oil file explorer' })
 
 vim.filetype.add({
-  extension = {rules = 'udevrules'}
+  extension = {
+    rules = 'udevrules',
+    h = 'c',
+  }
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
