@@ -28,4 +28,6 @@ bindings = [
     { key = "Left", mods = "Option", chars = "\u001bb" },
     # forward-word
     { key = "Right", mods = "Option", chars = "\u001bf" },
+    # create new window
+    { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
 ]
